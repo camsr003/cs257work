@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS usstatepop;
-CREATE TABLE usstatepop (
+DROP TABLE IF EXISTS uscitypop;
+CREATE TABLE uscitypop (
   city text,
   state text,
   pop real,
