@@ -48,7 +48,7 @@ def largest_citypop():
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM uscitypop ORDER BY pop DESC;"
+    sql = "SELECT * FROM uscitypop WHERE pop > 0 ORDER BY pop DESC;"
   
     cur.execute( sql )
 
