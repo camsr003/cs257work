@@ -122,10 +122,38 @@ def test_query_variable():
         print(row)
 
     return None
+    
+def create_table(sql):
+
+    # You will need to change the Password to use this code
+    
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="richardsonc",
+        user="richardsonc",
+        password="berry437lamp")
+
+    cur = conn.cursor()
+    
+    cur.execute( sql )
+
+    # Note: We could access individual items in the row
+    # That is, row[0] would be the name column in the previous example
+    #   ... and row[1] would be the abb column
+
+    #IMPORTANT: This function doesn't actually change the database
+    #If we are trying to change the database ...
+    # ... for example, creating a table
+    #Then we need the following command to finalize our changes
+
+    conn.commit()
+    
+    return None
 
  # print( test_query_one() )
 test_connection()
-test_query_one("DROP TABLE IF EXISTS usstatepop; CREATE TABLE usstatepop (code text, state text, pop real);")
-test_query_one("DROP TABLE IF EXISTS uscitypop; CREATE TABLE uscitypop (city text, state text, pop real, lat real, long real);")
+create_table("DROP TABLE IF EXISTS usstatepop; CREATE TABLE usstatepop (code text, state text, pop real);")
+create_table("DROP TABLE IF EXISTS uscitypop; CREATE TABLE uscitypop (city text, state text, pop real, lat real, long real);")
 
 # test_query_variable()
