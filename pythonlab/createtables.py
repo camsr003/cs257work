@@ -37,7 +37,6 @@ def test_query_one():
     cur = conn.cursor()
 
     sql = "DROP TABLE IF EXISTS usstatepop; CREATE TABLE usstatepop (code text, state text, pop real);"
-    sql2 = "DROP TABLE IF EXISTS uscitypop; CREATE TABLE uscitypop (city text, state text, pop real, lat real, long real);"
     
     cur.execute( sql )
 
@@ -60,7 +59,7 @@ def test_query_one():
 
 
 # This function sends a query that returns many items
-def test_query_all():
+def test_query_all(sql):
 
     # You will need to change the Password to use this code
     
@@ -72,8 +71,6 @@ def test_query_all():
         password="Berry437lamp")
 
     cur = conn.cursor()
-
-    sql = "SELECT name, abb FROM states"
     
     cur.execute( sql )
 
@@ -128,8 +125,8 @@ def test_query_variable():
 
     return None
 
-print( test_query_one() )
-
-# test_query_all()
+ # print( test_query_one() )
+test_query_all("DROP TABLE IF EXISTS usstatepop; CREATE TABLE usstatepop (code text, state text, pop real);")
+test_query_all("DROP TABLE IF EXISTS uscitypop; CREATE TABLE uscitypop (city text, state text, pop real, lat real, long real);")
 
 # test_query_variable()
