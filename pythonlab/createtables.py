@@ -23,7 +23,7 @@ def test_connection():
 
 
 # This function sends an SQL query to the database
-def test_query_one():
+def test_query_one(sql):
 
     # You will need to change the Password to use this code
     
@@ -35,8 +35,6 @@ def test_query_one():
         password="berry437lamp")
 
     cur = conn.cursor()
-
-    sql = "DROP TABLE IF EXISTS usstatepop; CREATE TABLE usstatepop (code text, state text, pop real);"
     
     cur.execute( sql )
 
@@ -127,7 +125,7 @@ def test_query_variable():
 
  # print( test_query_one() )
 test_connection()
-test_query_all("DROP TABLE IF EXISTS usstatepop; CREATE TABLE usstatepop (code text, state text, pop real);")
-test_query_all("DROP TABLE IF EXISTS uscitypop; CREATE TABLE uscitypop (city text, state text, pop real, lat real, long real);")
+test_query_one("DROP TABLE IF EXISTS usstatepop; CREATE TABLE usstatepop (code text, state text, pop real);")
+test_query_one("DROP TABLE IF EXISTS uscitypop; CREATE TABLE uscitypop (city text, state text, pop real, lat real, long real);")
 
 # test_query_variable()
