@@ -1,3 +1,5 @@
+import psycopg2
+
 # This function sends an SQL query to the database
 def find_Northfield():
 
