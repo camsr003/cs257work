@@ -12,7 +12,7 @@ def test_connection():
         port=5432,   
         database="richardsonc",
         user="richardsonc",
-        password="Berry437lamp")
+        password="berry437lamp")
 
     if conn is not None:
         print( "Connection Worked!" )
@@ -32,7 +32,7 @@ def test_query_one():
         port=5432,
         database="richardsonc",
         user="richardsonc",
-        password="Berry437lamp")
+        password="berry437lamp")
 
     cur = conn.cursor()
 
@@ -68,7 +68,7 @@ def test_query_all(sql):
         port=5432,
         database="richardsonc",
         user="richardsonc",
-        password="Berry437lamp")
+        password="berry437lamp")
 
     cur = conn.cursor()
     
@@ -101,7 +101,7 @@ def test_query_variable():
         port=5432,
         database="crichardson",
         user="crichardson",
-        password="Berry437lamp")
+        password="berry437lamp")
 
     cur = conn.cursor()
 
