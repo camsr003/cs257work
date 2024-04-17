@@ -35,6 +35,28 @@ def find_Northfield():
         return row
 
 # This function sends a query that returns many items
+def largest_citypop():
+
+    # You will need to change the Password to use this code
+    
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="richardsonc",
+        user="richardsonc",
+        password="berry437lamp")
+
+    cur = conn.cursor()
+
+    sql = "SELECT * FROM uscitypop ORDER BY pop DESC;"
+  
+    cur.execute( sql )
+
+    # fetchone() returns one row that matches your query
+    row = cur.fetchone()
+    
+    return row
+
 def test_query_all(sql):
 
     # You will need to change the Password to use this code
@@ -102,3 +124,4 @@ def test_query_variable():
     return None
 
 find_Northfield()
+largest_citypop()
