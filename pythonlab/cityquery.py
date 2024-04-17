@@ -29,10 +29,10 @@ def find_Northfield():
     #If we are trying to change the database ...
     # ... for example, creating a table
     #Then we need the following command to finalize our changes
-    
-    return row
-
-
+    if row == None then:
+        print("Northfield is not in the database")
+    else:
+        return row
 
 # This function sends a query that returns many items
 def test_query_all(sql):
