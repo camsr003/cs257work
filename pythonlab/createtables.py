@@ -126,6 +126,7 @@ def test_query_variable():
     return None
 
  # print( test_query_one() )
+test_connection()
 test_query_all("DROP TABLE IF EXISTS usstatepop; CREATE TABLE usstatepop (code text, state text, pop real);")
 test_query_all("DROP TABLE IF EXISTS uscitypop; CREATE TABLE uscitypop (city text, state text, pop real, lat real, long real);")
 
