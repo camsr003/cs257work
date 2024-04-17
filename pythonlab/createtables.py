@@ -10,8 +10,8 @@ def test_connection():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,   
-        database="richardsonc",
-        user="richardsonc",
+        database="crichardson",
+        user="crichardson",
         password="Berry437lamp")
 
     if conn is not None:
@@ -30,8 +30,8 @@ def test_query_one():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
-        database="richardsonc",
-        user="richardsonc",
+        database="crichardson",
+        user="crichardson",
         password="Berry437lamp")
 
     cur = conn.cursor()
@@ -66,8 +66,8 @@ def test_query_all(sql):
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
-        database="richardsonc",
-        user="richardsonc",
+        database="crichardson",
+        user="crichardson",
         password="Berry437lamp")
 
     cur = conn.cursor()
@@ -99,8 +99,8 @@ def test_query_variable():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
-        database="richardsonc",
-        user="richardsonc",
+        database="crichardson",
+        user="crichardson",
         password="Berry437lamp")
 
     cur = conn.cursor()
