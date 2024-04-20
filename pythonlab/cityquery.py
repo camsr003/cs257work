@@ -57,7 +57,7 @@ def largest_citypop():
     
     return "largest city name: " + row[0]
 
-def test_query_all(sql):
+def furthest_NESW():
 
     # You will need to change the Password to use this code
     
@@ -70,11 +70,17 @@ def test_query_all(sql):
 
     cur = conn.cursor()
     
+    sql = "SELECT * FROM uscitypop WHERE lat>0 ORDER BY lat DESC;"
+    
     cur.execute( sql )
 
     # fetchall() returns a list containing all rows that matches your query
     row_list = cur.fetchall()
-
+    North = row_list[0]
+    East = row_list[0]
+    South = row_list[0]
+    West = row_list[0]
+    
     # It is often useful to loop through all rows in a query result
     for row in row_list:
         print( row[1] )
