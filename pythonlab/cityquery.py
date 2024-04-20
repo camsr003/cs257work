@@ -105,7 +105,7 @@ def smallest_MN():
 
 
     # Here the %s signals that we will replace this with a variable later
-    sql = "SELECT uscitypop, abb FROM state WHERE abb = %s"
+    sql = "SELECT uscitypop, abb FROM usstatepop WHERE abb = %s"
 
     state_abb1 = 'MN'
     
