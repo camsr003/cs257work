@@ -55,7 +55,7 @@ def largest_citypop():
     # fetchone() returns one row that matches your query
     row = cur.fetchone()
     
-    return row[0]
+    return "largest city name:", row[0]
 
 def test_query_all(sql):
 
