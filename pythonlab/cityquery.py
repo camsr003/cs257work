@@ -32,7 +32,7 @@ def find_Northfield():
     if row == None:
         return "Northfield is not in the database"
     else:
-        return "lat: ", row[4], "long: ", row[5]
+        return "lat: " + row[4] + "long: " + row[5]
 
 # This function sends a query that returns many items
 def largest_citypop():
@@ -55,7 +55,7 @@ def largest_citypop():
     # fetchone() returns one row that matches your query
     row = cur.fetchone()
     
-    return "largest city name:", row[0]
+    return "largest city name: " + row[0]
 
 def test_query_all(sql):
 
