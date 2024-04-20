@@ -97,8 +97,8 @@ def smallest_MN():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
-        database="crichardson",
-        user="crichardson",
+        database="richardsonc",
+        user="richardsonc",
         password="berry437lamp")
 
     cur = conn.cursor()
