@@ -70,20 +70,22 @@ def furthest_NESW():
 
     cur = conn.cursor()
     
-    sql = "SELECT * FROM uscitypop WHERE lat>0 ORDER BY lat DESC;"
+    sql_NS = "SELECT * FROM uscitypop ORDER BY lat DESC;"
+    sql_EW = "SELECT * FROM uscitypop ORDER BY long DESC;"
     
-    cur.execute( sql )
+    cur.execute( sql_NS )
 
     # fetchall() returns a list containing all rows that matches your query
     row_list = cur.fetchall()
     North = row_list[0]
-    East = row_list[0]
-    South = row_list[0]
-    West = row_list[0]
+    South = row_list[-1]
+
+    cur.execute( sql_EW )
     
+    row_list = cur.fetchall()
+    East = row_list[0]
+    West = row_list[-1]
     # It is often useful to loop through all rows in a query result
-    for row in row_list:
-        print( row[1] )
     
     # Note: We could access individual items in the row
     # That is, row[0] would be the name column in the previous example
@@ -92,7 +94,7 @@ def furthest_NESW():
     # Here I am leaving out the conn.commit() because we aren't changing
     #    either the database or the data in the database
     
-    return None
+    return "Furthest North: " + North[0] + ", Furthest South: " + South[0] + ", Furthest East: " + East[0] + ", Furthest West: " + West[0]
 
 
 #Often we want to put a Python variable into an SQL query
