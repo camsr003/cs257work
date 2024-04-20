@@ -116,7 +116,7 @@ def smallest_MN():
     # For example,  [state_abb1]
     
     row_list = cur.fetchall()
-    smallest = 1000000
+    smallest = row_list[0[2]]
     
     for row in row_list:
         if row[2] < smallest:
