@@ -90,7 +90,7 @@ def test_query_all(sql):
 
 
 #Often we want to put a Python variable into an SQL query
-def test_query_variable():
+def smallest_MN():
     
     # You will need to change the Port and the Password to use this code
 
@@ -105,12 +105,11 @@ def test_query_variable():
 
 
     # Here the %s signals that we will replace this with a variable later
-    sql = "SELECT name, abb FROM states WHERE abb = %s OR abb = %s "
+    sql = "SELECT uscitypop, abb FROM state WHERE abb = %s"
 
     state_abb1 = 'MN'
-    state_abb2 = 'NM'
     
-    cur.execute( sql, [state_abb1, state_abb2]  )
+    cur.execute( sql, [state_abb1]  )
 
     # IMPORTANT: We need a list of values for the second input to execute
     #   ... Even if we are only inserting my variable, it must be in a list
@@ -119,9 +118,10 @@ def test_query_variable():
     row_list = cur.fetchall()
 
     for row in row_list:
-        print(row)
+        return row
 
     return None
 
 print(find_Northfield())
 print(largest_citypop())
+print(smallest_MN())
