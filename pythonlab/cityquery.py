@@ -118,10 +118,10 @@ def smallest_MN():
     row_list = cur.fetchall()
 
     for row in row_list:
-        return row
+        print(row)
 
     return None
 
 print(find_Northfield())
 print(largest_citypop())
-print(smallest_MN())
+smallest_MN()
