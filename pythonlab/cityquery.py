@@ -30,7 +30,7 @@ def find_Northfield():
     # ... for example, creating a table
     #Then we need the following command to finalize our changes
     if row == None:
-        print("Northfield is not in the database")
+        return "Northfield is not in the database"
     else:
         return row
 
@@ -123,5 +123,5 @@ def test_query_variable():
 
     return None
 
-find_Northfield()
-largest_citypop()
+print(find_Northfield())
+print(largest_citypop())
