@@ -105,11 +105,11 @@ def smallest_MN():
 
 
     # Here the %s signals that we will replace this with a variable later
-    sql = "SELECT state, code FROM usstatepop WHERE code = %s"
+    sql = "SELECT city, state FROM uscitypop WHERE state = %s"
 
-    state_abb1 = 'MN'
+    state = 'Minnesota'
     
-    cur.execute( sql, [state_abb1]  )
+    cur.execute( sql, [state]  )
 
     # IMPORTANT: We need a list of values for the second input to execute
     #   ... Even if we are only inserting my variable, it must be in a list
