@@ -32,7 +32,7 @@ def find_Northfield():
     if row == None:
         return "Northfield is not in the database"
     else:
-        return row
+        return "lat: ", row[4], "long: ", row[5]
 
 # This function sends a query that returns many items
 def largest_citypop():
@@ -48,7 +48,7 @@ def largest_citypop():
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM uscitypop WHERE pop > 0 ORDER BY pop DESC;"
+    sql = "SELECT * FROM uscitypop WHERE pop>0 ORDER BY pop DESC;"
   
     cur.execute( sql )
 
