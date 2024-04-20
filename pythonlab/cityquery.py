@@ -116,14 +116,12 @@ def smallest_MN():
     # For example,  [state_abb1]
     
     row_list = cur.fetchall()
-    smallest = row_list[0[2]]
     
     for row in row_list:
-        if row[2] < smallest:
-            smallest = row
+        print(row)
 
-    return smallest
+    return None
 
 print(find_Northfield())
 print(largest_citypop())
-print(smallest_MN())
+smallest_MN()
