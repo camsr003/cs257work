@@ -127,6 +127,33 @@ def smallest_MN():
     smallest = row_list[-1]
 
     return "smallest populated city in MN: " + smallest[0]
+    
+def user_query():
+
+    # You will need to change the Password to use this code
+    
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="richardsonc",
+        user="richardsonc",
+        password="berry437lamp")
+
+    cur = conn.cursor()
+    
+    sql = "SELECT * FROM uscitypop WHERE state LIKE %s ORDER BY pop DESC;"
+    
+    state = input("Select a state to get the population of: ")
+    
+    cur.execute( sql, [state] )
+
+    # fetchone() returns one row that matches your query
+    row_list = cur.fetchall()
+    total_pop = 0
+    for row in row_list:
+        total_pop += row[2]
+    
+    return "Total population in " + state + ": " + total_pop
 
 print(find_Northfield())
 print(largest_citypop())
