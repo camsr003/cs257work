@@ -14,7 +14,9 @@ def my_display(word1, word2):
     
 @app.route('/add/<num1>/<num2>')
 def my_add(num1, num2):
-    addition = num1 + num2
+    num1 = int(num1)
+    num2 = int(num2)
+    addition = str(num1 + num2)
     return addition
     
 @app.route('/color/<word1>')
