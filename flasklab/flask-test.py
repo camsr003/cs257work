@@ -23,6 +23,28 @@ def my_add(num1, num2):
 def my_color(word1):
     return '<h1 style="color:Orange">' + word1 + '</h1>'
 
+@app.route('/pop/<abbrev>')
+def state_pop(abbrev):
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="richardsonc",
+        user="richardsonc",
+        password="berry437lamp")
+
+    cur = conn.cursor()
+
+    sql = "SELECT * FROM uscitypop WHERE state LIKE %s ORDER BY pop DESC;"
+    
+    cur.execute( sql, [abbrev]  )
+
+    row = cur.fetchone()
+    
+    if row == None:
+        return "Enter a valid US state abbreviation."
+    else:
+        return row[2]
+        
 if __name__ == '__main__':
     my_port = 5124
     app.run(host='0.0.0.0', port = my_port) 
