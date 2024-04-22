@@ -145,8 +145,11 @@ def user_query():
 
     if len(state) == 2:
         sql = "SELECT * FROM usstatepop WHERE code LIKE %s ORDER BY pop DESC;"
-    else:
-        sql = "SELECT * FROM uscitypop WHERE state LIKE %s ORDER BY pop DESC;"
+        cur.execute( sql, [state] )
+        row = cur.fetchone()
+        state = row[1]
+        
+    sql = "SELECT * FROM uscitypop WHERE state LIKE %s ORDER BY pop DESC;"
     
     cur.execute( sql, [state] )
 
