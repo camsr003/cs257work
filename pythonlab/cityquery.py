@@ -143,7 +143,7 @@ def user_query():
     
     state = input("Select a state to get the population of: ")
 
-    if state.length == 2:
+    if len(state) == 2:
         sql = "SELECT * FROM usstatepop WHERE code LIKE %s ORDER BY pop DESC;"
     else:
         sql = "SELECT * FROM uscitypop WHERE state LIKE %s ORDER BY pop DESC;"
