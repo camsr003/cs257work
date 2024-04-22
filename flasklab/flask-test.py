@@ -13,7 +13,7 @@ def my_display(word1, word2):
     return the_string
     
 @app.route('/add/<num1>/<num2>')
-def my_display(num1, num2):
+def my_add(num1, num2):
     addition = num1 + num2
     return addition
     
