@@ -44,7 +44,7 @@ def state_pop(abbrev):
     if row == None:
         return "Enter a valid US state abbreviation."
     else:
-        return str(row[2])
+        return abbrev + " has a population of " + str(row[2]) + " people."
         
 if __name__ == '__main__':
     my_port = 5124
