@@ -35,7 +35,7 @@ def state_pop(abbrev):
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM usstatepop WHERE state LIKE %s ORDER BY pop DESC;"
+    sql = "SELECT * FROM usstatepop WHERE code LIKE %s ORDER BY pop DESC;"
     
     cur.execute( sql, [abbrev]  )
 
