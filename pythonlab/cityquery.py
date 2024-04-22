@@ -156,7 +156,7 @@ def user_query():
     for row in row_list:
         total_pop += row[2]
     
-    return "Total population in " + state + ": " + total_pop
+    return "Total population in " + state + ": " + str(total_pop)
 
 print(find_Northfield())
 print(largest_citypop())
