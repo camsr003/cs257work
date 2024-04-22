@@ -141,9 +141,12 @@ def user_query():
 
     cur = conn.cursor()
     
-    sql = "SELECT * FROM uscitypop WHERE state LIKE %s ORDER BY pop DESC;"
-    
     state = input("Select a state to get the population of: ")
+
+    if state.length == 2:
+        sql = "SELECT * FROM usstatepop WHERE code LIKE %s ORDER BY pop DESC;"
+    else:
+        sql = "SELECT * FROM uscitypop WHERE state LIKE %s ORDER BY pop DESC;"
     
     cur.execute( sql, [state] )
 
