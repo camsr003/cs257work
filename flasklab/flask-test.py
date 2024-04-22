@@ -11,7 +11,12 @@ def my_function():
 def my_display(word1, word2):
     the_string = "The words are: " + word1 + " and " + word2;
     return the_string
-
+    
+@app.route('/add/<num1>/<num2>')
+def my_display(num1, num2):
+    addition = num1 + num2
+    return addition
+    
 @app.route('/color/<word1>')
 def my_color(word1):
     return '<h1 style="color:Orange">' + word1 + '</h1>'
