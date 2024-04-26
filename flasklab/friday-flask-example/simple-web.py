@@ -176,7 +176,31 @@ def random_sent():
            "Imperfect",
             "King",
             "Cursed",
-            "Blessed"]
+            "Blessed",
+           "Mad",
+           "Fell Omen",
+           "Misbegotten",
+           "Best",
+           "Beautiful",
+           "Tired",
+           "Restless",
+           "Mariner",
+           "Terrible",
+           "Interesting",
+           "Thoughtful",
+           "Omen",
+           "Rare",
+           "Difficult",
+           "Last Great Mage",
+           "Pirate",
+           "Malevolent",
+           "First",
+           "Bug Eater",
+           "Forgotten",
+           "Invisible",
+           "Lonesome",
+           "Putrid",
+           "Benevolent"]
     sql = "SELECT * FROM uscitypop;"
     
     randomchance = random.randint(0, 100)
@@ -185,15 +209,23 @@ def random_sent():
         ancient = False
     else:
         ancient = True
+        if randomchance > 5:
+            era = " BC"
         
     if ancient:
         randomyear = random.randint(0, 1800)
+        if era:
+            randomyear = random.randint(0, 10000)
     else:
         randomyear = random.randint(1900, 2023)
         
     randomname = names[random.randint(0, len(names) - 1)]
-    randomadj = adjs[random.randint(0, len(adjs) - 1)]
-  
+    one_million = random.randint(0, 1000000)
+    if one_million == 1:
+        randomadj = "One in a Million, Greatest of All that Is
+    else:
+        randomadj = adjs[random.randint(0, len(adjs) - 1)]
+    
     cur.execute( sql  )
 
     row_list = cur.fetchall()
@@ -201,7 +233,9 @@ def random_sent():
     randomcity = row_list[randomcityindex][0]
     state = row_list[randomcityindex][1]
     if ancient:
-        randomsent = randomname + " the Ancient " + randomadj + " was born in " + randomcity + ", " + state + " in " + str(randomyear)
+        randomsent = randomname + " the Ancient " + randomadj + " was born near modern day " + randomcity + ", " + state + " in " + str(randomyear)
+        if era:
+            randomsent = randomname + " the Ancient " + randomadj + " was born near modern day " + randomcity + ", " + state + " in " + str(randomyear) + era
     else:
         randomsent = randomname + " the " + randomadj + " was born in " + randomcity + ", " + state + " in " + str(randomyear)
     return render_template("randomsent.html", rand_sent = randomsent)
