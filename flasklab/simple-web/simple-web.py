@@ -6,7 +6,7 @@ app = flask.Flask(__name__)
 
 #
 @app.route('/')
-def welcome()
+def welcome():
     return render_template("welcome.html")
     
 @app.route('/random')
