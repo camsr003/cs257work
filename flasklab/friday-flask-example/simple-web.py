@@ -200,8 +200,10 @@ def random_sent():
     randomcityindex = random.randint(0, len(row_list) - 1)
     randomcity = row_list[randomcityindex][0]
     state = row_list[randomcityindex][1]
-    randomsent = randomname + " the " + randomadj + " was born in " + randomcity + ", " + state + " in " + str(randomyear)
-    
+    if ancient:
+        randomsent = randomname + " the Ancient" + randomadj + " was born in " + randomcity + ", " + state + " in " + str(randomyear)
+    else:
+        randomsent = randomname + " the " + randomadj + " was born in " + randomcity + ", " + state + " in " + str(randomyear)
     return render_template("randomsent.html", rand_sent = randomsent)
         
 if __name__ == '__main__':
