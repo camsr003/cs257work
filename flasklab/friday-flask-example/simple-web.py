@@ -201,6 +201,13 @@ def random_sent():
            "Lonesome",
            "Putrid",
            "Benevolent"]
+    colors = ["color:red",
+              "color:green",
+              "color:blue",
+              "color:orange",
+              "color:purple",
+              "color:yellow",
+             "color:black"]
     sql = "SELECT * FROM uscitypop;"
     
     randomchance = random.randint(0, 100)
@@ -232,13 +239,15 @@ def random_sent():
     randomcityindex = random.randint(0, len(row_list) - 1)
     randomcity = row_list[randomcityindex][0]
     state = row_list[randomcityindex][1]
+    randomcolor = colors[random.randint(0, len(colors) - 1)]
+    
     if ancient:
         randomsent = randomname + " the Ancient " + randomadj + " was born near modern day " + randomcity + ", " + state + " in " + str(randomyear)
         if era:
             randomsent = randomname + " the Ancient " + randomadj + " was born near modern day " + randomcity + ", " + state + " in " + str(randomyear) + era
     else:
         randomsent = randomname + " the " + randomadj + " was born in " + randomcity + ", " + state + " in " + str(randomyear)
-    return render_template("randomsent.html", rand_sent = randomsent)
+    return render_template("randomsent.html", rand_sent = randomsent, color = randomcolor)
         
 if __name__ == '__main__':
     my_port = 5124
