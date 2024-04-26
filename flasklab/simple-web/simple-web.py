@@ -6,6 +6,8 @@ app = flask.Flask(__name__)
 
 #
 @app.route('/')
+
+@app.route('/random')
 def state_pop():
     conn = psycopg2.connect(
         host="localhost",
