@@ -218,10 +218,12 @@ def random_sent():
         ancient = True
         if randomchance > 5:
             era = " BC"
+        else:
+            era = None
         
     if ancient:
         randomyear = random.randint(0, 1800)
-        if era:
+        if era == " BC":
             randomyear = random.randint(0, 10000)
     else:
         randomyear = random.randint(1900, 2023)
