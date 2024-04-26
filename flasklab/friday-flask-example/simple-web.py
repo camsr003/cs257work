@@ -244,11 +244,11 @@ def random_sent():
     randomcolor = colors[random.randint(0, len(colors) - 1)]
     
     if ancient:
-        randomsent = randomname + " the Ancient " + randomadj + " was born near modern day " + randomcity + ", " + state + " in the year" + str(randomyear)
+        randomsent = randomname + " the Ancient " + randomadj + " was born near modern day " + randomcity + ", " + state + " in the year " + str(randomyear)
         if era:
-            randomsent = randomname + " the Ancient " + randomadj + " was born near modern day " + randomcity + ", " + state + " in the year" + str(randomyear) + era
+            randomsent = randomname + " the Ancient " + randomadj + " was born near modern day " + randomcity + ", " + state + " in the year " + str(randomyear) + era
     else:
-        randomsent = randomname + " the " + randomadj + " was born in " + randomcity + ", " + state + " in the year" + str(randomyear)
+        randomsent = randomname + " the " + randomadj + " was born in " + randomcity + ", " + state + " in the year " + str(randomyear)
     return render_template("randomsent.html", rand_sent = randomsent, color = randomcolor)
         
 if __name__ == '__main__':
