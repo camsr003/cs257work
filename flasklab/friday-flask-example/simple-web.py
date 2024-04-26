@@ -229,7 +229,7 @@ def random_sent():
     randomname = names[random.randint(0, len(names) - 1)]
     one_million = random.randint(0, 1000000)
     if one_million == 1:
-        randomadj = "One in a Million, Greatest of All that Is
+        randomadj = "One in a Million, Greatest of All that Is"
     else:
         randomadj = adjs[random.randint(0, len(adjs) - 1)]
     
