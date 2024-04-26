@@ -186,7 +186,7 @@ def random_sent():
 
     row_list = cur.fetchall()
     randomplace = row_list[random.randint(0, len(row_list) - 1)][0]
-    randomsent = randomname + " the " + randomadj + " was born in " + randomplace + " in " + randomyear
+    randomsent = randomname + " the " + randomadj + " was born in " + randomplace + " in " + str(randomyear)
     
     return render_template("randomsent.html", randomsent)
         
