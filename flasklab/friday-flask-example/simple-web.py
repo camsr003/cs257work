@@ -178,9 +178,10 @@ def random_sent():
             "Cursed",
             "Blessed"]
     sql = "SELECT * FROM uscitypop;"
-    random = random.randint(0, 100)
     
-    if random > 10:
+    randomchance = random.randint(0, 100)
+    
+    if randomchance > 10:
         ancient = False
     else:
         ancient = True
