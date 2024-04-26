@@ -175,7 +175,7 @@ def state_pop():
            "Imperfect",
             "King",
             "Cursed",
-            "Blessed",
+            "Blessed"
            ]
     sql = "SELECT * FROM uscitypop;"
     randomyear = random.randint(1900, 2023)
