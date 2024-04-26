@@ -201,7 +201,7 @@ def random_sent():
     randomcity = row_list[randomcityindex][0]
     state = row_list[randomcityindex][1]
     if ancient:
-        randomsent = randomname + " the Ancient" + randomadj + " was born in " + randomcity + ", " + state + " in " + str(randomyear)
+        randomsent = randomname + " the Ancient " + randomadj + " was born in " + randomcity + ", " + state + " in " + str(randomyear)
     else:
         randomsent = randomname + " the " + randomadj + " was born in " + randomcity + ", " + state + " in " + str(randomyear)
     return render_template("randomsent.html", rand_sent = randomsent)
