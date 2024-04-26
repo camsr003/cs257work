@@ -1,4 +1,5 @@
 import flask
+from flask import render_template
 import psycopg2
 import random
 
