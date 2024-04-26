@@ -178,7 +178,18 @@ def random_sent():
             "Cursed",
             "Blessed"]
     sql = "SELECT * FROM uscitypop;"
-    randomyear = random.randint(1900, 2023)
+    random = random.randint(0, 100)
+    
+    if random > 10:
+        ancient = False
+    else:
+        ancient = True
+        
+    if ancient:
+        randomyear = random.randint(0, 1800)
+    else:
+        randomyear = random.randint(1900, 2023)
+        
     randomname = names[random.randint(0, len(names) - 1)]
     randomadj = adjs[random.randint(0, len(adjs) - 1)]
   
