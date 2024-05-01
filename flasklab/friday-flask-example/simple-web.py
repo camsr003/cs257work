@@ -235,7 +235,6 @@ def random_sent():
     randomcityindex = random.randint(0, len(row_list) - 1)
     randomcity = row_list[randomcityindex][0]
     state = row_list[randomcityindex][1]
-    randomcolor = colors[random.randint(0, len(colors) - 1)]
     
     if ancient:
         randomsent = randomname + " the Ancient " + randomadj + " was born near modern day " + randomcity + ", " + state + " in the year " + str(randomyear)
@@ -243,7 +242,7 @@ def random_sent():
             randomsent = randomname + " the Ancient " + randomadj + " was born near modern day " + randomcity + ", " + state + " in the year " + str(randomyear) + era
     else:
         randomsent = randomname + " the " + randomadj + " was born in " + randomcity + ", " + state + " in the year " + str(randomyear)
-    return render_template("randomsent.html", rand_sent = randomsent, rcolor = randomcolor)
+    return render_template("randomsent.html", rand_sent = randomsent)
         
 if __name__ == '__main__':
     my_port = 5124
