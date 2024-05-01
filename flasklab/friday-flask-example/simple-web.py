@@ -201,13 +201,7 @@ def random_sent():
            "Lonesome",
            "Putrid",
            "Benevolent"]
-    colors = ["color:red",
-              "color:green",
-              "color:blue",
-              "color:orange",
-              "color:purple",
-              "color:yellow",
-             "color:black"]
+    
     sql = "SELECT * FROM uscitypop;"
     
     randomchance = random.randint(0, 100)
