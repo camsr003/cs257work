@@ -8,6 +8,7 @@ def welcome():
     message = "Welcome to My Example Webpage."
     message = message + " This text was produced by concatenating strings in Python!"
     return render_template("homepage.html", someText = message)
+    
 @app.route('/newpage')
 def nextpage():
     message = "This is the next page."
