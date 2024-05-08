@@ -9,7 +9,7 @@ def welcome():
     message = message + " This text was produced by concatenating strings in Python!"
     return render_template("homepage.html", someText = message)
     
-@app.route('/newpage')
+@app.route('/nextpage')
 def nextpage():
     message = "This is the next page."
     return render_template("nextpage.html", someText = message)
